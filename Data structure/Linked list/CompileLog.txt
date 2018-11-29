@@ -1,0 +1,4 @@
+Target OS: Win32 for i386
+Compiling f:\data structure\linked list\linkedlist.pas
+Linking f:\data structure\linked list\linkedList.exe
+181 Lines compiled, 0.6 sec

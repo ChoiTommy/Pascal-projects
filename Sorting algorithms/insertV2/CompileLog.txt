@@ -1,0 +1,4 @@
+Target OS: Win32 for i386
+Compiling f:\insertv2\insertv2.pas
+Linking f:\insertv2\insertV2.exe
+37 Lines compiled, 0.7 sec
