@@ -87,20 +87,35 @@ begin
         afterpos := search(after, l);
         {set the next of new data to one after}
         l.list[freepos].next := l.list[afterpos].next;
+
         {store data into free node}
         l.list[freepos].data := data;
         {update next of after to the pos of the new node}
         l.list[afterpos].next := freepos;
+
+        if l.list[freepos].next <> Null then
+            l.list[l.list[freepos].next].prev := freepos; {**}
+        l.list[freepos].prev := afterpos;                 {**}
     end;
 end;
 
-function searchPrevPos(data : string; l : listType): integer;
+{function searchPrevPos(data : string; l : listType): integer;
 var p : Integer;
 begin
     p := l.head;
     while (l.list[p].next <> Null) and (l.list[l.list[p].next].data <> data) do //**P<>null must be put first */
         p := l.list[p].next; //**advance to next pointer, make use of next */
     searchPrevPos := p;
+end;}
+
+function searchPrevPos (data : string; l : listType): integer;
+var p : Integer;
+begin
+    p := search(data, l);
+    if p = Null then
+        writeln('not found')
+    else
+        searchPrevPos := l.list[p].prev;
 end;
 
 procedure delete(data : string; var l: listType);
@@ -109,14 +124,20 @@ begin
     p := search(data, l);
     if p = l.head then
     begin
-        l.list[l.head].data := '';
-        l.head := l.list[l.head].next;
+        l.head := l.list[p].next;
+        if l.head <> Null then
+            l.list[l.head].prev := null; {*}
+        l.list[p].data := '';
         l.list[p].next := null;
+        l.list[p].prev := Null;          {*}
     end
     else
     begin
         l.list[searchPrevPos(data, l)].next := l.list[p].next;
+        if l.list[p].next <> null then
+            l.list[l.list[p].next].prev := l.list[p].prev; {*}
         l.list[p].data := '';
+        l.list[p].prev := Null;                            {*}
         l.list[p].next := null;
     end;
 end;
@@ -125,7 +146,7 @@ procedure printListdumb(l : listType);
 var i : integer;
 begin
     for i := 1 to size do
-        writeln(i:3, l.list[i].data:5, l.list[i].next:5);
+        writeln(i:3, l.list[i].data:5, l.list[i].next:5, l.list[i].prev:5);
 end;
 
 procedure printList(l : listType);
@@ -135,7 +156,7 @@ begin
     write('Head: ', i);
     while i <> null do
     begin
-        write(' ----> ',  l.list[i].data, '(', l.list[i].next, ')' );
+        write(' ----> ',  l.list[i].data, '(', l.list[i].next, ')', '(', l.list[i].prev, ')' );
         i := l.list[i].next;
     end;
     writeln;
