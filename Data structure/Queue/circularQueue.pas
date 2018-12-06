@@ -15,8 +15,8 @@ var q : queueType;
 procedure init(var q : queueType);
 var i : Integer;
 begin
-    q.front := 1;
-    q.rear := 0;
+    q.front := 1;   {head}
+    q.rear := 0;    {Tale}
     q.count := 0;
     for i := 1 to size do
         q.data[i] := 0;
