@@ -4,7 +4,7 @@ const size = 10;
 
 type
     nodeType = record
-                    prev, next : integer;
+                    prev, next : integer;  {*}
                     data : string;
                end;
     listType = record
