@@ -1,8 +1,8 @@
-**English SBA**
+#**English SBA**
 
 ##Question 1
 
-To a large extend I think the theme song describes the personality and life experiences of Judy Hopps. In the lyrics of the theme song, there are some lines like ```I won’t give up, no I won’t give in``` and ```I wanna try everything```. These lines reflect the personality of Judy. She will not give up when she faces difficulties. She didn’t give up even Chief Bogo has given her parking duties, and she has done her job responsibly. For her life experiences, ```I keep falling down``` and ```I lost another fight``` show that Judy Hopps has faced lots of difficulties in the investigation in the movie. Judy doesn’t give up even she is only given 48 hours to solve the case. She once quits her job, but at last she returns to Zootopia and she continues her investigation.
+To a large extend I think the theme song describes the personality and life experiences of Judy Hopps. In the lyrics of the theme song, there are some lines like `I won’t give up, no I won’t give in` and `I wanna try everything`. These lines reflect the personality of Judy. She will not give up when she faces difficulties. She didn’t give up even Chief Bogo has given her parking duties, and she has done her job responsibly. For her life experiences, `I keep falling down` and `I lost another fight` show that Judy Hopps has faced lots of difficulties in the investigation in the movie. Judy doesn’t give up even she is only given 48 hours to solve the case. She once quits her job, but at last she returns to Zootopia and she continues her investigation.
 	
 I think Officer Clawhauser in the film best describe me. He is helpful and always helps Judy Hopps when she needs help. I think I am the same as him because I always help others when they are in need too. Also, he loves eating donuts. I am also fond of sweet things, such as candies, chocolates and cakes. So, I think Officer Clawhauser best represent me.
 	
@@ -37,4 +37,3 @@ For the similarities between Hong Kong and Zootopia, there are many ethnic group
 For the differences between Hong Kong and Zootopia, people in Hong Kong still do not want to change the current situation. Having so many discrimination and stereotyping, people do not aware of its seriousness and keep stereotyping and discriminating others. For example, new comers from mainland are often discriminated as dirty and uneducated people, but that is not always true. In Zootopia, there are protests by animals and want to change the situation of Zootopia. They voice out for peace and love because preys are afraid of predators and want to get rid of them.
 
 I sometimes love Hong Kong because some people are able to voice out at a certain moment.
-
