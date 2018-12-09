@@ -42,7 +42,7 @@ begin
       b:=1;
        end
     end
-    
+
     else if ord(c) =97 then
     begin
       for i:=1 to l do
@@ -56,7 +56,7 @@ begin
       b:=0;
         end
     end
-    
+
     else if ord(c) =100 then
     begin
         for i:=1 to l do
@@ -70,7 +70,7 @@ begin
       b:=0;
       end
     end
-    
+
     else if ord(c) =119 then
     begin
      for i:=1 to l do
@@ -116,7 +116,7 @@ writeln('+','+':70);
 for i:=1 to 70 do
 write('+');
 writeln('+') ;
- 
+
   writeln;
 
 fy:=random(20)+2;
@@ -134,7 +134,7 @@ repeat
     if (x = fx) and (y = fy)then
     begin
     gotoxy(31,1);
-    write('score:',score);
+    write('score:', score);
     fy:=random(20)+3;
     fx:=random(65)+3;
        gotoxy(fx,fy);
