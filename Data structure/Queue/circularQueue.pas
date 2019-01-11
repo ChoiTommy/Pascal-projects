@@ -4,7 +4,7 @@ const size = 10;
 
 type
     queueType = record
-                    count, front, rear : Integer;
+                    count, front, rear : Integer;  //0..size for front and rear
                     data : array[1..size] of Integer;
                 end;
 

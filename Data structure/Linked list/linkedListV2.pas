@@ -55,7 +55,6 @@ begin
             l.list[l.head].prev := freepos; {*}
         l.list[freepos].prev := Null;       {*}
         l.head := freepos;
-
     end;
 end;
 
