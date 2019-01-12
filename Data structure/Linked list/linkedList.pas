@@ -1,4 +1,14 @@
 program linkedList;
+(*
+    procedures:
+    1. init
+    2. insertBegin (to the beginning)
+    3. searchFreeNode
+    4. search
+    5. searchPrevPos
+    6. delete
+    7. insertAfter (after a node)
+*)
 const size = 10;
       null = -1;
 
@@ -35,7 +45,7 @@ begin
     while (i <= size) and (l.list[i].data <> '') do //**MUST PUT (i <= size) FIRST because [i] may overflow */
         i := i + 1;
     if i > size then
-        searchFreeNode := Null
+        searchFreeNode := Null // full
     else
         searchFreeNode := i;
 end;
@@ -49,8 +59,8 @@ begin
     else
     begin
         l.list[freepos].data := data;
-        l.list[freepos].next := l.head;
-        l.head := freepos;
+        l.list[freepos].next := l.head; //the next value of this node is the original head
+        l.head := freepos; // it becomes the head
     end;
 end;
 
@@ -68,7 +78,7 @@ begin
     p := l.head;
     while (p<>Null) and (l.list[p].data <> data) do //**P<>null must be put first */
         p := l.list[p].next; //**advance to next pointer, make use of next */
-    search := p;
+    search := p; // returns null of searching failed
 end;
 
 procedure insertAfter(after, data : string; var l : listType);
@@ -81,11 +91,11 @@ begin
     begin
         afterpos := search(after, l);
         {set the next of new data to one after}
-        l.list[freepos].next := l.list[afterpos].next;
+        l.list[freepos].next := l.list[afterpos].next; //inherit the *next* values of *after*
         {store data into free node}
         l.list[freepos].data := data;
         {update next of after to the pos of the new node}
-        l.list[afterpos].next := freepos;
+        l.list[afterpos].next := freepos; // set the next value of *after* to become freepos
     end;
 end;
 
@@ -110,7 +120,7 @@ begin
     end
     else
     begin
-        l.list[searchPrevPos(data, l)].next := l.list[p].next;
+        l.list[searchPrevPos(data, l)].next := l.list[p].next; // [prev]->[one u need to delete]->[next] set prev.next be delete.next
         l.list[p].data := '';
         l.list[p].next := null;
     end;

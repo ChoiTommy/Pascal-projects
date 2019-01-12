@@ -1,4 +1,10 @@
 program QueueV3;
+(*
+    procedures:
+    1. init
+    2. enqueue
+    3. dequeue
+*)
 uses crt;
 const size = 10;
 
@@ -32,7 +38,7 @@ begin
             q.rear := 1
         else
             q.rear := q.rear + 1;}
-        q.rear := q.rear mod size + 1;
+        q.rear := q.rear mod size + 1; // when rear = 10(size) and u need to enqueue, enqueue location = 1
         q.data[q.rear] := x;
         q.isFull := (q.front = q.rear mod size + 1);
         //if (q.front = q.rear mod 10 + 1) then //(q.front=q.rear+1) or (q.rear = size)
@@ -46,7 +52,7 @@ begin
     if not q.isEmpty then
     begin
         x := q.data[q.front];
-        q.data[q.front] := 0;
+        q.data[q.front] := 0; // clear that space
         {if q.front = size then
             q.front := 1
         else

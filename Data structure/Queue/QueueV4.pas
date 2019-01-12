@@ -1,4 +1,13 @@
 program QueueV4;
+(*
+    procedures:
+    1. init
+    2. enqueue
+    3. dequeue
+    functions:
+    1. isFull
+    2. isEmpty
+*)
 uses crt;
 const size = 10;
 
@@ -19,7 +28,7 @@ end;
 
 function isEmpty(q : queueType):Boolean;
 begin
-    isEmpty := (q.front = q.rear mod 10 + 1) and (q.data[q.front] = 0);
+    isEmpty := (q.front = q.rear mod 10 + 1) and (q.data[q.front] = 0); // pick up a space to see if it equals 0--> empty
 end;
 
 procedure init(var q : queueType);
@@ -35,7 +44,7 @@ procedure enqueue(var q : queueType; x : Integer);
 begin
     if not isFull(q) then
     begin
-        q.rear := q.rear mod size + 1;
+        q.rear := q.rear mod size + 1; //if rear = size, it becomes 1 when enqueuing
         q.data[q.rear] := x;
     end;
 end;

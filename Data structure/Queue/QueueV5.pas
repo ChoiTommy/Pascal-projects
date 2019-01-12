@@ -1,4 +1,13 @@
 program QueueV5; //**zero-based*//
+(*
+    procedures:
+    1. init
+    2. enqueue
+    3. dequeue
+    functions:
+    1. isFull
+    2. isEmpty
+*)
 uses crt;
 const size = 10;
 

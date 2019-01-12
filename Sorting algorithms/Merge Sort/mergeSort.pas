@@ -1,4 +1,9 @@
 program MergeSort;
+(*
+    procedures:
+    1. mergeArrays
+    2. MergeSort
+*)
 const sizeA = 5;
       sizeB = 5;
       sizeC = sizeA + sizeB;
@@ -18,9 +23,9 @@ procedure mergeArrays(var c : listType; front, rear : Integer);
 var x, y, z : integer;
     d : listType;
 begin
-    x := front; //first array
-    y := (front + rear) div 2 + 1; //second array
-    z := front; // temp array
+    x := front; //first array pointer
+    y := (front + rear) div 2 + 1; //second array pointer
+    z := front; // temp array pointer
     while (x <= (front + rear) div 2) and (y <= rear) do
     begin
         if (c[x] < c[y]) then
@@ -49,7 +54,7 @@ begin
         z := z + 1;
     until z > rear;
 
-    for i := front to rear do
+    for i := front to rear do //copy all values in the temp array into the actual array
         c[i] := d[i];
 end;
 

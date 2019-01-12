@@ -1,4 +1,13 @@
 program queueDataStructure;
+(*
+    procedures:
+    1. init
+    2. enqueue
+    3. dequeue
+    functions:
+    1. isFull
+    2. isEmpty
+*)
 uses crt;
 const size = 10;
 
@@ -44,8 +53,8 @@ procedure dequeue(var q : queueType; var x : Integer);
 begin
     if not isEmpty(q) then
     begin
-        x := q.data[q.front];
-        q.data[q.front] := 0;
+        x := q.data[q.front]; // retrieve data
+        q.data[q.front] := 0; // zero means empty
         q.front := q.front + 1;
     end;
 end;

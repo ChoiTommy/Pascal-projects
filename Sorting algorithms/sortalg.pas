@@ -45,7 +45,6 @@ begin
         for j := 1 to i do                       //                for y := 1 to size - x do
             if list[j+1].name < list[j].name then  //'<'(ascending) or '>'(desending)????
                 swap(list[j],list[j+1]);
-
     end;
 end;
 
@@ -147,7 +146,7 @@ begin
     begin
         num := a[i];
         position := i;
-        while (position > 1) and (a[position-1].name > num.name) do
+        while (position > 1) and (a[position-1].name > num.name) do // > means the array will be sorted in ascending order
         begin
             a[position] := a[position-1];
             position := position - 1;

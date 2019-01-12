@@ -1,10 +1,20 @@
 program linkedListV2;
+(*
+    procedures:
+    1. init
+    2. insertBegin (to the beginning)
+    3. searchFreeNode
+    4. search
+    5. searchPrevPos
+    6. delete
+    7. insertAfter (after a node)
+*)
 const size = 10;
       null = -1;
 
 type
     nodeType = record
-                    prev, next : integer;  {*}
+                    prev, next : integer;  {*prev*}
                     data : string;
                end;
     listType = record

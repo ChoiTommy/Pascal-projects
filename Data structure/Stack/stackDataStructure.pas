@@ -1,16 +1,26 @@
 program stackDataStructure;
+(*first in, last out*)
+(*
+    procedures:
+    1. init
+    2. push
+    3. pop
+    functions:
+    1. isFull
+    2. isEmpty
+*)
 uses crt;
 const size = 10;
 type stacktype = record
                     data : array[0..size - 1] of integer;
-                    top : integer;                         //top of the stack initialize to -1
+                    top : integer;                         //top of the stack initialize to -1(empty)
                  end;
 
 var stack : stacktype;
     response : string;
     x : integer;
 
-procedure init(var s : stacktype);
+procedure init(var s : stacktype); // initialization
 var i : Integer;
 begin
     s.top := -1;
@@ -18,9 +28,9 @@ begin
         s.data[i] := 0;
 end;
 
-function isFull(s : stacktype):Boolean;
+function isFull(s : stacktype):Boolean;(*here use size - 1 cuz the array is zero-based*)
 begin
-    isFull := s.top = size - 1;
+    isFull := s.top = size - 1; //check if the top of the stack is equal to size(number of spaces in the stack)
 end;
 
 function isEmpty(s : stacktype):Boolean;
@@ -42,7 +52,7 @@ begin
     if not isEmpty(s) then
     begin
         x := s.data[s.top];
-        s.data[s.top] := 0;
+        s.data[s.top] := 0; // zero means empty...
         s.top := s.top - 1;
     end;
 end;

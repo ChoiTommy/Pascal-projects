@@ -1,4 +1,13 @@
 program circularQueue;
+(*
+    procedures:
+    1. init
+    2. enqueue
+    3. dequeue
+    functions:
+    1. isFull
+    2. isEmpty
+*)
 uses crt;
 const size = 10;
 
@@ -36,12 +45,12 @@ procedure enqueue(var q : queueType; x : Integer);
 begin
     if not isFull(q) then
     begin
-        if q.rear = size then  //we may use mod
+        if q.rear = size then  //we may use mod --> q.rear mod size + 1
             q.rear := 1
         else
             q.rear := q.rear + 1;
         q.data[q.rear] := x;
-        q.count := q.count + 1;
+        q.count := q.count + 1; //this count is used to determine whether the queue is full or not
     end;
 end;
 
