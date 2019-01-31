@@ -1,6 +1,5 @@
 # Pascal projects - for 2020 HKDSE
-Fundemental computer knowledge is tested in HKDSE exams
----
+Fundemental computer knowledge
 ## Sorting Algorithms
 Including:
 - Bubble sort
