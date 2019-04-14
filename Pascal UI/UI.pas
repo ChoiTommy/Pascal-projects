@@ -1,9 +1,10 @@
 program UI;
 uses crt;
 
-procedure createButton(startX, startY, width, height : integer; s : string; textColor, buttonColor : integer; selected : Boolean);
+procedure drawButton(startX, startY, width, height : integer; s : string; textColor, buttonColor : integer; selected : Boolean);
 (*TODO
 * text color, print character, ...
+* button border
 *)
 var i, j : integer;
 begin
@@ -19,17 +20,17 @@ begin
     end;
 end;
 
-procedure createInputBox();
+procedure drawMsgBox(startX, startY, width, height : integer);
 begin
 
 end;
 
-procedure createColorBlock();
+procedure drawColorBlock();
 begin
 
 end;
 
 begin
-    createButton(2, 2, 10, 5, 's', 1, 1, False);
+    drawButton(2, 2, 10, 5, 's', 1, 1, False);
     ReadLn;
 end.
