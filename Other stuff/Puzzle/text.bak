@@ -1,0 +1,8 @@
+program test;
+var txtfile1, txtfile2 : text;
+
+begin
+
+    WriteLn('ge');
+    readln;
+end.

@@ -1,4 +1,4 @@
-program password;
+program MsgBox;
 uses crt;
 const x_pos = 39;
       y_pos = 9;
@@ -13,33 +13,33 @@ procedure stupidEncryption(var s : string);
 var i : integer;
 begin
     for i := 1 to length(s) do
-        s[i] := chr(ord(s[i])+2);   
+        s[i] := chr(ord(s[i])+2);
 end;
 
 procedure stupidDecryption(var s : string);
 var i : integer;
 begin
     for i := 1 to length(s) do
-        s[i] := chr(ord(s[i])-2);   
+        s[i] := chr(ord(s[i])-2);
 end;
 
 procedure printUserPasswordBox(title : string);
 var i, j : integer;
 begin
-    gotoxy(x_pos, y_pos); 
+    gotoxy(x_pos, y_pos);
     textbackground(lightgray);
     textcolor(black);
     write(#201);
-    for i := 2 to 3 do  
+    for i := 2 to 3 do
         write(#205);
     write(title, ':');
-    for i := length(title)+1 to width-7 do  
+    for i := length(title)+1 to width-7 do
         write(#205);
     //write(#187);
     write('- x');
     for i := 2 to height-1 do
     begin
-        gotoxy(x_pos, y_pos-1+i); 
+        gotoxy(x_pos, y_pos-1+i);
         for j := 1 to width do
             if (j = 1) or (j = width) then
                 write(#186)
@@ -48,7 +48,7 @@ begin
     end;
     gotoxy(x_pos, y_pos+height-1);
     write(#200);
-    for i := 2 to width - 1 do  
+    for i := 2 to width - 1 do
         write(#205);
     write(#188);
     gotoxy(x_pos+5, y_pos+3);
@@ -62,8 +62,8 @@ begin
     textbackground(black);
     for i := 1 to 15 do
         write(' ');
-    
-    
+
+
     textcolor(lightgray);
 
 end;
@@ -84,12 +84,12 @@ begin
             uname[0] := chr(ord(uname[0]) - 1);
         end;
         gotoxy(x_pos+5+10, y_pos+3);
-        for i := 1 to length(uname)+1 do    
+        for i := 1 to length(uname)+1 do
             write(' ');
         gotoxy(x_pos+5+10, y_pos+3);
         write(uname);
     until (c = #9) or (c = #13) and (length(uname) >= 3);
-    if c = #9 then  
+    if c = #9 then
         mode := 2;
 end;
 
@@ -116,13 +116,13 @@ begin
             pw[0] := chr(ord(pw[0])-1);
         end;
         gotoxy(x_pos+5+10, y_pos+8);
-        for i := 1 to length(stars)+1 do    
+        for i := 1 to length(stars)+1 do
             write(' ');
         //clreol;
         gotoxy(x_pos+5+10, y_pos+8);
         write(stars);
     until (c = #9) or (c = #13) and (length(pw) >= 8);
-    if c = #9 then  
+    if c = #9 then
         mode := 1;
 end;
 
