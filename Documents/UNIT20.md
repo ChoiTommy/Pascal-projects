@@ -1,5 +1,4 @@
 # Unit 20 - System Design
----
 ## Introduction
 System design
 
@@ -27,22 +26,27 @@ Ways to acquire software for systems:
 |**Meet the needs** of most organizations and reduce cost in hiring or training a group of IT staff|General control of organization data, client’s privacy, information systems and project schedules may be sacrificed|
 ### 3. User interface
 User interface
-: refers to graphics, textual, auditory information present to users
+
+> refers to graphics, textual, auditory information present to users
+
 #### Command line interface (CLI)
 Users need to input commands to control the system.
+
 |Pros|Cons|
 |---|---|
 |**Low** requirements of hardware, needs much less RAM in order to use|**Difficult for inexperienced users to use**, not capable of handling multimedia information|
 #### Graphical user interface (GUI)
 It features windows, graphical icons, menus and the use of pointing devices (**WIMP**). It allows users to input commands by selecting menu options or clicking buttons.
 For portable devices, touch screen is used to facilitate the communication between users and devices.
+
 |Pros|Cons|
 |---|---|
 |Users can learn to use in less time, good at presenting graphical information (**multimedia**)|Efficiency and productivity are lower|
 ### 3. Database structure
-Table is a collections of related records, and a record is a collection of related fields.A key field can be used to uniquely identify a record.
+Table is a collections of related records, and a record is a collection of related fields. A key field can be used to uniquely identify a record.
 Database structure must be designed to **meet system requirements**.
 System designer needs to define the fields, data type, the key field, and the relationships between tables.
+
 ### 4. Data control
 Garbage-in-garbage-out (GIGO)
 **Data validation and verification** methods.

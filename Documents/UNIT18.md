@@ -1,5 +1,4 @@
 # Unit 18 - Basic concept of system development
----
 ## Introduction
 System
 

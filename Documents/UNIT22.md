@@ -1,5 +1,4 @@
 # Unit 22 - System Conversion, Maintenance and Documentation
----
 ## System conversions
 ### Direct cutover conversion
 Fewer resources are required.

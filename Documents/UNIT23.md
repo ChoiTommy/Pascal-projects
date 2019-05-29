@@ -1,5 +1,4 @@
 # Unit 23 - Alternative Approaches and Related Jobs of System Development
----
 ## Limitation and variations of waterfall model
 Waterfall model is poorly adapted to changes and no going back.
 Waterfall model with feedback, waterfall model with overlapping stages and incremental development (waterflow model with iteration) are another approaches based on the original waterfall model.

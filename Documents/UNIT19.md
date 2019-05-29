@@ -1,5 +1,4 @@
 # Unit 19 - System Analysis
----
 ## Introduction
 System analysts perform system analysis.
 System analysis
