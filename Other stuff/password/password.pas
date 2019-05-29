@@ -13,14 +13,14 @@ procedure stupidEncryption(var s : string);
 var i : integer;
 begin
     for i := 1 to length(s) do
-        s[i] := chr(ord(s[i])+2);   
+        s[i] := chr(ord(s[i])+2);
 end;
 
 procedure stupidDecryption(var s : string);
 var i : integer;
 begin
     for i := 1 to length(s) do
-        s[i] := chr(ord(s[i])-2);   
+        s[i] := chr(ord(s[i])-2);
 end;
 
 procedure printMsgBox;
@@ -28,7 +28,7 @@ var i, j : integer;
 begin
     for i := 1 to height do
     begin
-        gotoxy(x_pos-1+i, y_pos-1+i); 
+        gotoxy(x_pos-1+i, y_pos-1+i);
         for j := 1 to width do
         begin
             textbackground(lightgray);
@@ -66,5 +66,5 @@ begin
     stupidDecryption(pw);
     writeln('After stupid decryption: ', pw);
     printMsgBox;
-    readln;
+    readln();
 end.
