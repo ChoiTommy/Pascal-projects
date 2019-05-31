@@ -4,7 +4,7 @@ System
 
 > a set of integrated components interacting with each other to serve a common purpose
 
-## Computer-base system
+## Computer-based system
 - environment
 - input
 - output
@@ -20,6 +20,6 @@ System
 - System conversion and maintenance
 - Documentation
 - System Development Life Cycle (SDLC)
-- Waterflow model
+- Waterfall model
 
 [Back to table of contents](../REVISION.md)
