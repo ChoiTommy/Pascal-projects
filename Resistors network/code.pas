@@ -1,11 +1,21 @@
 program code;
 {$H+}
 var equation : string;
-(*  Still bugged:
-    (1-(1-2|3-(23|1)|23)|(23-12|23)|23)|45-1
-    1|(1|(1-2|3-(5|2-4)))
+const list = ['0'..'9', 'E', 'e', '+', '.'];
 
- *)
+procedure removeZerosAndSpace(var s: string);
+var i : integer;
+begin
+    i := Length(s);
+    while (i > 0) and (s[i] = '0') do
+        i := i - 1;
+    s := copy(s, 1, i);
+    if s[1] = ' ' then
+        s := copy(s, 2, length(s)-1);
+    if s[Length(s)]='.' then
+        s := copy(s, 1, length(s)-1);
+end;
+
 function find(eq : string;pos : integer):integer;
 var layer : integer;
 begin
@@ -39,12 +49,12 @@ begin
     	tmp2 := '';
     	b := a - 1;
         c := a + 1;
-        while (b > 0) and ((eq[b] in ['0'..'9']) or (eq[b] = 'E') or (eq[b] = '.') or (eq[b] = '+')) do
+        while (b > 0) and (eq[b] in list) do
         begin
         	tmp1 := eq[b] + tmp1;
             b := b - 1
         end;
-        while (c <= length(eq)) and ((eq[c] in ['0'..'9']) or (eq[c] = 'E') or (eq[c] = '.') or (eq[c] = '+')) do
+        while (c <= length(eq)) and (eq[c] in list) do
         begin
         	tmp2 := tmp2 + eq[c];
             c := c + 1
@@ -56,10 +66,8 @@ begin
         if character = '|' then
         	str(1/(1/m+1/n):0:10, tmp1)
         else str(m+n:0:10, tmp1);
-        if tmp1[1] = ' ' then
-            tmp1 := copy(tmp1, 2, length(tmp1)-1);
-        if tmp2[1] = ' ' then
-            tmp2 := copy(tmp2, 2, length(tmp2)-1);
+        removeZerosAndSpace(tmp1);
+        removeZerosAndSpace(tmp2);
         write('tmp1 = ', tmp1);readln;
         eq := copy(eq, 1, b) + tmp1 + copy(eq, c, length(eq)-c+1);
         write('eq = ', eq);readln;
@@ -74,13 +82,13 @@ var a, b, err : integer;
 begin
 	calculateResistance := -1;
 	a := pos('(', eq);
-    if a <> 0 then
+    while a <> 0 do
     begin
     	b := find(eq, a);
-        str(calculateResistance(copy(eq, a+1, b-a-1)), tmp1);
-        if tmp1[1] = ' ' then
-            tmp1 := copy(tmp1, 2, length(tmp1)-1);
-        eq := copy(eq, 1, a-1) + tmp1 + copy(eq, b+1, length(eq)-b)
+        str(calculateResistance(copy(eq, a+1, b-a-1)):0:10, tmp1);
+        removeZerosAndSpace(tmp1);
+        eq := copy(eq, 1, a-1) + tmp1 + copy(eq, b+1, length(eq)-b);
+        a := pos('(', eq)
     end;
     write(eq);readln;
     cheat('|', eq);
