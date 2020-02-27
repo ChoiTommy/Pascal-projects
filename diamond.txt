@@ -1,0 +1,13 @@
+var i, j : integer;
+	t : string;
+begin
+	for i := 1 to 15 do
+    begin
+        write('*':abs(8-i)+1);
+    	t := '';
+        for j := 1 to 2*(7-abs(i-8)) do
+        	t := t + '*';
+        write(t);
+        writeln
+    end
+end.

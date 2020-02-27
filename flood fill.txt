@@ -1,0 +1,40 @@
+type image = array[1..10, 1..10] of char;
+var grid : image;
+	x, y, startPosX, startPosY : integer;
+
+procedure check(var grid : image; x, y : integer);
+begin
+	if (x > 1) and (y > 1) and (x < 10) and (y < 10) then
+      if grid[y][x] = ' ' then
+      begin
+          grid[y][x] := '.';
+          check(grid, x, y-1);
+          check(grid, x+1, y);
+          check(grid, x, y+1);
+          check(grid, x-1, y);
+      end;
+end;
+
+begin
+	for y := 1 to 10 do
+    begin
+    	for x := 1 to 10 do
+        begin
+        	read(grid[y][x]);
+            if grid[y][x] = '.' then
+            begin
+            	startPosX := x;
+                startPosY := y;
+            end;
+        end;
+        readln;
+    end;
+    grid[startPosY][startPosX] := ' ';
+    check(grid, startPosX, startPosY);
+    for y := 1 to 10 do
+    begin
+    	for x := 1 to 10 do
+        	write(grid[y][x]);
+        writeln;
+    end
+end.
