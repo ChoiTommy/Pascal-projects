@@ -18,3 +18,6 @@ Including:
 - Queue
 - Linked list
 (implemented using arrays)
+
+## Recent project
+- [2048](2048)
