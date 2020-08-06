@@ -280,7 +280,8 @@ begin
             if g[i][j] = 0 then TextBackground(0)
             else if g[i][j] >= 64 then TextBackground(6)
             else TextBackground(round(log10(g[i][j]) / log10(2)));
-            Write(squares[i][j]:7);
+            //if g[i][j] <> 0 then Write(g[i][j]:7) else Write(' ':7);
+            Write(g[i][j]:7);
         end;
         WriteLn;
     end;
